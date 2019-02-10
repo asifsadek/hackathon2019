@@ -13,7 +13,7 @@ path = 'input_images/'
 train = 'train/'
 folder_name = 1
 
-for folder_name in range(1,5):
+for folder_name in range(1,3):
 	sample_number = 0
 	for sample_number in range(0,10):
 		img = imread(path+'/'+str(folder_name)+'/'+str(sample_number)+'.jpg')

@@ -44,7 +44,6 @@ while(True):
 			ids = "Sajjad"
 		elif ids == 2:
 			ids = "Mortuza"
-		yeal(ids)	
 		putText(im,str(ids), (x,y-10), FONT_HERSHEY_SIMPLEX, 1, (0,0,255))
 		
 	imshow('frame',im)

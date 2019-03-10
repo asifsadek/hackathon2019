@@ -25,16 +25,18 @@ while(True):
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 
+    # Detect and show the image
     bomb = classifier.detectMultiScale(gray,1.2,6)
+    for (x,y,w,h) in bomb:
+        frame = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
+    cv2.imshow('frame',frame)
 
     if len(bomb) > 0:
         stop()
+        # Waiting For Next Command
+        a = input('Waiting For Your Command')
+        # Serial Communication start and send r to run the bot
         
-    for (x,y,w,h) in bomb:
-        frame = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
-    
-    cv2.imshow('frame',frame)
-    
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
         

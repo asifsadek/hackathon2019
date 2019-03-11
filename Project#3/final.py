@@ -19,7 +19,7 @@ def stop():
 
 x,y,w,h = 0,0,0,0
 cap = cv2.VideoCapture(0)
-classifier = cv2.CascadeClassifier('cascade.xml')
+classifier = cv2.CascadeClassifier('detector/cascade.xml')
 
 while(True):
     ret, frame = cap.read()
